@@ -13,7 +13,7 @@ const HeadComponent = ()=>{
         <div className="grid grid-flow-col p-5 shadow-lg">
             <div className="flex col-span-1">
                 <img className="h-8 hover:cursor-pointer hover:opacity-60" onClick={handleHamClick}src={HAM_MENU} alt="menu" />
-                <img className="h-8 mx-2" src={YT_LOGO} alt="logo" />
+                <a href="/"><img className="h-8 mx-2" src={YT_LOGO} alt="logo" /></a>
             </div>
             <div className=" col-span-10 text-center">
                 <input className="w-1/2 p-1 border border-gray-400 rounded-l-full hover:cursor-pointer hover:opacity-60" type="text"/>

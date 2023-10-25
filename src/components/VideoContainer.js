@@ -2,6 +2,7 @@ import React from 'react'
 import VideoCard from './VideoCard';
 import useYoutubeVideo from '../hooks/useYoutubeVideos';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const VideoContainer = () => {
   useYoutubeVideo();
@@ -10,7 +11,10 @@ const VideoContainer = () => {
   
   return (
     <div className='flex flex-wrap'>
-        {data.map((video)=><VideoCard key = {video.id} info={video}/>)}
+        {data.map((video)=>(
+        <Link to={"/watch/?v="+video.id}>
+          <VideoCard key = {video.id} info={video}/>
+        </Link>))}
     </div>
   )
 }
