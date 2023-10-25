@@ -6,3 +6,6 @@
         - buttons list
         - videoContainer
             - VideoCards
+
+
+- added toggle ham menu feature using redux
