@@ -1,14 +1,17 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addSearchData } from '../redux/searchVideoSlice';
 
 const SideBar = () => {
   const isMenuOpen = useSelector((store)=>store?.app?.isMenuOpen) ;
+  const dispatch = useDispatch();
   if(!isMenuOpen) return null;
   return (
     <div className='p-5 shadow-lg w-40'>
       <ul>
-        <li><Link to={""}>Home</Link></li>
+        <li><Link onClick={()=> dispatch(addSearchData(null))} to={""}>Home</Link></li>
         <li>Shorts</li>
         <li>Videos</li>
         <li>Live</li>

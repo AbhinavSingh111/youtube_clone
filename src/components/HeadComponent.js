@@ -1,7 +1,9 @@
 import { useDispatch } from "react-redux";
-import { YT_LOGO , HAM_MENU, USER_LOGO } from "../utilities/constants";
+import { YT_LOGO , HAM_MENU, USER_LOGO, YT_LIST_API } from "../utilities/constants";
 import {toggleMenu} from '../redux/appSlice';
 import useHead from "../hooks/useHead";
+import { addSearchData } from "../redux/searchVideoSlice";
+import { GOOGLE_API } from "../utilities/constants";
 
 
 const HeadComponent = ()=>{
@@ -9,6 +11,21 @@ const HeadComponent = ()=>{
     const dispatch = useDispatch();
     const handleHamClick = ()=>{
         dispatch(toggleMenu()); 
+    }
+
+    const fetchSearchList = async () => {
+        const data = await fetch(YT_LIST_API+searchQuery+"&key="+GOOGLE_API);
+        const json  = await data.json();
+        dispatch(addSearchData(json.items));
+    }
+    const handleSearch = ()=>{
+        if (searchQuery==="")
+        {
+            alert("Enter a search keyword");
+        }
+        else{
+            fetchSearchList();
+        }
     }
     
     return (
@@ -20,7 +37,7 @@ const HeadComponent = ()=>{
             <div className=" col-span-10 relative">
                 <div className="text-center">
                     <input  onFocus={()=>setShowSugg(true)} onBlur={()=>setShowSugg(false)} className=" px-5 w-1/2 p-1 border border-gray-400 rounded-l-full hover:cursor-pointer hover:opacity-60" type="text" value={searchQuery}   onChange={(e)=>setSearchQuery(e.target.value)}/>
-                    <button className="px-5 bg-gray-100 border border-gray-400 p-1 rounded-r-full hover:cursor-pointer hover:opacity-60">🔍</button>
+                    <button onClick={handleSearch} className="px-5 bg-gray-100 border border-gray-400 p-1 rounded-r-full hover:cursor-pointer hover:opacity-60">🔍</button>
                 </div>
                 
                 {showSugg && suggestions.length > 0 ?(<div className="fixed bg-white py-2 px-3 w-[35rem] left-[31%] shadow-lg rounded-xl border border-gray-200 ">
