@@ -5,7 +5,7 @@ const ButtonList = () => {
   const youtubeCategories = ["Vlogs", "Cooking", "Tech", "DIY", "Fitness", "Comedy", "Education", "Music", "Fashion", "Gaming", "Pets", "Science"];
 
   return (
-    <div className='inline-flex overflow-hidden'>
+    <div className='inline-flex overflow-hidden bg-white' >
       {youtubeCategories.map((category)=><ButtonComponent key={category} name={category} />)}
     </div>
   )

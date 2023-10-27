@@ -4,7 +4,7 @@ import ButtonList from './ButtonList';
 
 const MainContainer = () => {
   return (
-    <div className='col-span-11'>MainContainer
+    <div className='col-span-11'>
         <ButtonList />
         <VideoContainer />
     </div>
