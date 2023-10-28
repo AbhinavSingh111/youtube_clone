@@ -9,9 +9,10 @@ const chatSlice = createSlice({
     },
     reducers : {
         addChats : (state , action) => {
-            state.messages.splice(MSG_BLOAT_LIMIT,1); //splice will start removing 1 obj after after reaching the length of 30. for each new message , 1 message/obj will be removed
+            if(state.messages.length > MSG_BLOAT_LIMIT){state.messages.splice(0,1);}
+             //splice will start removing 1 obj after after reaching the length of 30. for each new message , 1 message/obj will be removed
             // we are doing this to not let our page bloat , and keeping whats necessary only
-            state.messages.unshift(action.payload); //ushift pushes from front of the list
+            state.messages.push(action.payload); //ushift pushes from front of the list
         },
     },
 });
