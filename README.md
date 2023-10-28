@@ -19,3 +19,5 @@ so when i click home button on the sidebar , the search data is deleted , and th
 Not sure if i should cache the search results for a longer time.
 
 Also: feature to be implemented: clicking on the search suggestions and then displaying those results.
+
+bug : when going back from the watch page the chat data should be deleted , until feature to combine it with videos marked as live are not attatched to it

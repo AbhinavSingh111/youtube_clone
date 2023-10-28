@@ -8,3 +8,4 @@ export const YT_SEARCH = "http://suggestqueries.google.com/complete/search?clien
 
 
 export const YT_LIST_API = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=";
+export const MSG_BLOAT_LIMIT = 30;
