@@ -12,8 +12,8 @@ const SideBar = () => {
     <div className='p-5 shadow-lg w-40'>
       <ul>
         <li><Link onClick={()=> dispatch(addSearchData(null))} to={""}>Home</Link></li>
-        <li><Link to={'/demo'}>Demo</Link></li>
-        <li>Videos</li>
+        <li><Link to={'/memo'}>Memo</Link></li>
+        <li><Link to={'/ref'}>Ref</Link></li>
         <li>Live</li>
       </ul>
       <h1 className="font-bold pt-5">Subscriptions</h1>
