@@ -6,6 +6,7 @@ import appStore from './redux/appStore';
 import {createBrowserRouter , RouterProvider} from 'react-router-dom';
 import MainContainer from './components/MainContainer';
 import WatchComponent from './components/WatchComponent';
+import Memo from './components/Memo';
 
 const appRouter = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const appRouter = createBrowserRouter([
       {
         path: "watch",
         element: <WatchComponent />
+      },
+      {
+        path: "demo",
+        element: <Memo />
       }
     ]
   }
